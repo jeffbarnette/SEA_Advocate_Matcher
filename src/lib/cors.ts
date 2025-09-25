@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { env, getAllowedOrigins } from "./env";
 
-// CORS configuration for production
+// CORS configuration using environment variables
 const corsHeaders = {
-  "Access-Control-Allow-Origin": process.env.NODE_ENV === "production" 
-    ? process.env.ALLOWED_ORIGINS || "https://yourdomain.com"
+  "Access-Control-Allow-Origin": env.NODE_ENV === "production" 
+    ? getAllowedOrigins().join(", ")
     : "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
