@@ -1,5 +1,7 @@
 # Environment Configuration
 
+> **📝 Disclaimer**: This environment configuration guide serves as an example of detailed setup documentation. In a real-world project, you would customize the environment variables, configuration options, and troubleshooting steps to match your specific deployment requirements and infrastructure.
+
 This document explains how to set up and configure environment variables for the Solace Advocate Matcher application.
 
 ## Quick Start

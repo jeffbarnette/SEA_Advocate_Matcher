@@ -1,5 +1,7 @@
 # Solace Advocates API Documentation
 
+> **📝 Disclaimer**: This API documentation serves as an example of comprehensive API reference documentation. In a real-world project, you would customize the endpoints, authentication methods, and response formats to match your specific API requirements and business logic.
+
 ## Overview
 
 The Solace Advocates API provides endpoints for managing and searching advocate data. This API is built with Next.js and uses PostgreSQL with Drizzle ORM.
