@@ -7,4 +7,6 @@
 
 ```curl -X POST http://localhost:3000/api/seed```
 
+5. Created a new branch and PR to address API security vulnerabilities and to fix build errors.
 
+6. Created a new branch and PR to address environment configuration. Setup a proper .env.example file.

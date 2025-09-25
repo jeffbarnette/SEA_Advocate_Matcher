@@ -9,7 +9,9 @@
     "lint": "next lint",
     "generate": "drizzle-kit generate",
     "migrate:up": "node ./src/db/migrate.js",
-    "seed": "node --loader esbuild-register/loader -r esbuild-register ./src/db/seed/index.ts"
+    "seed": "node --loader esbuild-register/loader -r esbuild-register ./src/db/seed/index.ts",
+    "setup-env": "node scripts/setup-env.js",
+    "postinstall": "npm run setup-env"
   },
   "dependencies": {
     "drizzle-orm": "^0.32.1",
