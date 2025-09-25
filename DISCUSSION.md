@@ -10,3 +10,5 @@
 5. Created a new branch and PR to address API security vulnerabilities and to fix build errors.
 
 6. Created a new branch and PR to address environment configuration. Setup a proper .env.example file.
+
+7. Created a new branch and PR to address the frontend performance issues. This required completely rewriting the page component to address all of the frontend performance issues. Also fixed searching.

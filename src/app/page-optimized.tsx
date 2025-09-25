@@ -217,10 +217,6 @@ export default function Home() {
     setSearchTerm(e.target.value);
   }, []);
 
-  const handleFormSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault(); // Prevent page refresh
-  }, []);
-
   const handleCityChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setCityFilter(e.target.value);
   }, []);
@@ -259,19 +255,17 @@ export default function Home() {
     <main style={{ margin: "24px" }}>
       <h1>Solace Advocates</h1>
       
-      <form onSubmit={handleFormSubmit}>
-        <FilterControls
-          searchTerm={searchTerm}
-          cityFilter={cityFilter}
-          degreeFilter={degreeFilter}
-          uniqueCities={uniqueCities}
-          uniqueDegrees={uniqueDegrees}
-          onSearchChange={handleSearchChange}
-          onCityChange={handleCityChange}
-          onDegreeChange={handleDegreeChange}
-          onReset={handleReset}
-        />
-      </form>
+      <FilterControls
+        searchTerm={searchTerm}
+        cityFilter={cityFilter}
+        degreeFilter={degreeFilter}
+        uniqueCities={uniqueCities}
+        uniqueDegrees={uniqueDegrees}
+        onSearchChange={handleSearchChange}
+        onCityChange={handleCityChange}
+        onDegreeChange={handleDegreeChange}
+        onReset={handleReset}
+      />
 
       <div style={{ fontSize: "14px", color: "#666", marginBottom: "10px" }}>
         Showing {advocates.length} advocate{advocates.length !== 1 ? 's' : ''}
