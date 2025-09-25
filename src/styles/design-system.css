@@ -1,0 +1,376 @@
+/* Solace Health Design System */
+
+/* Import Playfair Display font for Solace logo */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+  /* Colors matching Solace Health brand from screenshot */
+  --solace-primary: #1a5f3f;        /* Dark green primary */
+  --solace-primary-dark: #144a32;   /* Darker green */
+  --solace-primary-light: #2d7a54;  /* Lighter green */
+  --solace-secondary: #f4a261;      /* Light gold/orange accent */
+  --solace-secondary-dark: #e76f51; /* Darker orange */
+  --solace-accent: #e9c46a;         /* Light gold accent */
+  
+  /* Neutral colors */
+  --solace-white: #ffffff;
+  --solace-gray-50: #f9fafb;
+  --solace-gray-100: #f3f4f6;
+  --solace-gray-200: #e5e7eb;
+  --solace-gray-300: #d1d5db;
+  --solace-gray-400: #9ca3af;
+  --solace-gray-500: #6b7280;
+  --solace-gray-600: #4b5563;
+  --solace-gray-700: #374151;
+  --solace-gray-800: #1f2937;
+  --solace-gray-900: #111827;
+  
+  /* Status colors */
+  --solace-success: #10b981;
+  --solace-warning: #f59e0b;
+  --solace-error: #ef4444;
+  --solace-info: #3b82f6;
+  
+  /* Typography */
+  --solace-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --solace-font-size-xs: 0.75rem;    /* 12px */
+  --solace-font-size-sm: 0.875rem;  /* 14px */
+  --solace-font-size-base: 1rem;    /* 16px */
+  --solace-font-size-lg: 1.125rem;  /* 18px */
+  --solace-font-size-xl: 1.25rem;   /* 20px */
+  --solace-font-size-2xl: 1.5rem;   /* 24px */
+  --solace-font-size-3xl: 1.875rem; /* 30px */
+  --solace-font-size-4xl: 2.25rem;  /* 36px */
+  
+  /* Font weights */
+  --solace-font-weight-normal: 400;
+  --solace-font-weight-medium: 500;
+  --solace-font-weight-semibold: 600;
+  --solace-font-weight-bold: 700;
+  
+  /* Line heights */
+  --solace-line-height-tight: 1.25;
+  --solace-line-height-normal: 1.5;
+  --solace-line-height-relaxed: 1.75;
+  
+  /* Spacing */
+  --solace-space-1: 0.25rem;   /* 4px */
+  --solace-space-2: 0.5rem;    /* 8px */
+  --solace-space-3: 0.75rem;   /* 12px */
+  --solace-space-4: 1rem;     /* 16px */
+  --solace-space-5: 1.25rem;  /* 20px */
+  --solace-space-6: 1.5rem;   /* 24px */
+  --solace-space-8: 2rem;     /* 32px */
+  --solace-space-10: 2.5rem;  /* 40px */
+  --solace-space-12: 3rem;     /* 48px */
+  --solace-space-16: 4rem;     /* 64px */
+  --solace-space-20: 5rem;     /* 80px */
+  
+  /* Border radius */
+  --solace-radius-sm: 0.25rem;   /* 4px */
+  --solace-radius-md: 0.375rem;  /* 6px */
+  --solace-radius-lg: 0.5rem;    /* 8px */
+  --solace-radius-xl: 0.75rem;   /* 12px */
+  --solace-radius-2xl: 1rem;     /* 16px */
+  --solace-radius-full: 9999px;
+  
+  /* Shadows */
+  --solace-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --solace-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --solace-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --solace-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --solace-transition-fast: 150ms ease-in-out;
+  --solace-transition-normal: 250ms ease-in-out;
+  --solace-transition-slow: 350ms ease-in-out;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--solace-font-family);
+  font-size: var(--solace-font-size-base);
+  line-height: var(--solace-line-height-normal);
+  color: var(--solace-gray-800);
+  background-color: var(--solace-gray-50);
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography utilities */
+.text-xs { font-size: var(--solace-font-size-xs); }
+.text-sm { font-size: var(--solace-font-size-sm); }
+.text-base { font-size: var(--solace-font-size-base); }
+.text-lg { font-size: var(--solace-font-size-lg); }
+.text-xl { font-size: var(--solace-font-size-xl); }
+.text-2xl { font-size: var(--solace-font-size-2xl); }
+.text-3xl { font-size: var(--solace-font-size-3xl); }
+.text-4xl { font-size: var(--solace-font-size-4xl); }
+
+.font-normal { font-weight: var(--solace-font-weight-normal); }
+.font-medium { font-weight: var(--solace-font-weight-medium); }
+.font-semibold { font-weight: var(--solace-font-weight-semibold); }
+.font-bold { font-weight: var(--solace-font-weight-bold); }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Color utilities */
+.text-primary { color: var(--solace-primary); }
+.text-secondary { color: var(--solace-secondary); }
+.text-gray-500 { color: var(--solace-gray-500); }
+.text-gray-600 { color: var(--solace-gray-600); }
+.text-gray-700 { color: var(--solace-gray-700); }
+.text-gray-800 { color: var(--solace-gray-800); }
+.text-white { color: var(--solace-white); }
+
+.bg-primary { background-color: var(--solace-primary); }
+.bg-secondary { background-color: var(--solace-secondary); }
+.bg-white { background-color: var(--solace-white); }
+.bg-gray-50 { background-color: var(--solace-gray-50); }
+.bg-gray-100 { background-color: var(--solace-gray-100); }
+
+/* Spacing utilities */
+.p-1 { padding: var(--solace-space-1); }
+.p-2 { padding: var(--solace-space-2); }
+.p-3 { padding: var(--solace-space-3); }
+.p-4 { padding: var(--solace-space-4); }
+.p-5 { padding: var(--solace-space-5); }
+.p-6 { padding: var(--solace-space-6); }
+.p-8 { padding: var(--solace-space-8); }
+
+.px-2 { padding-left: var(--solace-space-2); padding-right: var(--solace-space-2); }
+.px-3 { padding-left: var(--solace-space-3); padding-right: var(--solace-space-3); }
+.px-4 { padding-left: var(--solace-space-4); padding-right: var(--solace-space-4); }
+.px-6 { padding-left: var(--solace-space-6); padding-right: var(--solace-space-6); }
+.px-8 { padding-left: var(--solace-space-8); padding-right: var(--solace-space-8); }
+
+.py-2 { padding-top: var(--solace-space-2); padding-bottom: var(--solace-space-2); }
+.py-3 { padding-top: var(--solace-space-3); padding-bottom: var(--solace-space-3); }
+.py-4 { padding-top: var(--solace-space-4); padding-bottom: var(--solace-space-4); }
+.py-6 { padding-top: var(--solace-space-6); padding-bottom: var(--solace-space-6); }
+.py-8 { padding-top: var(--solace-space-8); padding-bottom: var(--solace-space-8); }
+
+.m-1 { margin: var(--solace-space-1); }
+.m-2 { margin: var(--solace-space-2); }
+.m-3 { margin: var(--solace-space-3); }
+.m-4 { margin: var(--solace-space-4); }
+.m-6 { margin: var(--solace-space-6); }
+.m-8 { margin: var(--solace-space-8); }
+
+.mb-2 { margin-bottom: var(--solace-space-2); }
+.mb-4 { margin-bottom: var(--solace-space-4); }
+.mb-6 { margin-bottom: var(--solace-space-6); }
+.mb-8 { margin-bottom: var(--solace-space-8); }
+
+.mt-4 { margin-top: var(--solace-space-4); }
+.mt-6 { margin-top: var(--solace-space-6); }
+.mt-8 { margin-top: var(--solace-space-8); }
+
+/* Border radius utilities */
+.rounded-sm { border-radius: var(--solace-radius-sm); }
+.rounded-md { border-radius: var(--solace-radius-md); }
+.rounded-lg { border-radius: var(--solace-radius-lg); }
+.rounded-xl { border-radius: var(--solace-radius-xl); }
+.rounded-2xl { border-radius: var(--solace-radius-2xl); }
+.rounded-full { border-radius: var(--solace-radius-full); }
+
+/* Shadow utilities */
+.shadow-sm { box-shadow: var(--solace-shadow-sm); }
+.shadow-md { box-shadow: var(--solace-shadow-md); }
+.shadow-lg { box-shadow: var(--solace-shadow-lg); }
+.shadow-xl { box-shadow: var(--solace-shadow-xl); }
+
+/* Flexbox utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-2 { gap: var(--solace-space-2); }
+.gap-3 { gap: var(--solace-space-3); }
+.gap-4 { gap: var(--solace-space-4); }
+.gap-6 { gap: var(--solace-space-6); }
+.gap-8 { gap: var(--solace-space-8); }
+
+/* Grid utilities */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Responsive utilities */
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Component-specific styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--solace-space-3) var(--solace-space-6);
+  border-radius: var(--solace-radius-lg);
+  font-weight: var(--solace-font-weight-medium);
+  font-size: var(--solace-font-size-sm);
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--solace-transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--solace-primary);
+  color: var(--solace-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--solace-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--solace-shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--solace-secondary);
+  color: var(--solace-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--solace-secondary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--solace-shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--solace-primary);
+  border: 2px solid var(--solace-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--solace-primary);
+  color: var(--solace-white);
+}
+
+.card {
+  background-color: var(--solace-white);
+  border-radius: var(--solace-radius-xl);
+  box-shadow: var(--solace-shadow-sm);
+  border: 1px solid var(--solace-gray-200);
+  transition: all var(--solace-transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--solace-shadow-md);
+  transform: translateY(-2px);
+}
+
+.input {
+  width: 100%;
+  padding: var(--solace-space-3) var(--solace-space-4);
+  border: 2px solid var(--solace-gray-300);
+  border-radius: var(--solace-radius-lg);
+  font-size: var(--solace-font-size-base);
+  transition: all var(--solace-transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--solace-primary);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+}
+
+.select {
+  width: 100%;
+  padding: var(--solace-space-3) var(--solace-space-4);
+  border: 2px solid var(--solace-gray-300);
+  border-radius: var(--solace-radius-lg);
+  font-size: var(--solace-font-size-base);
+  background-color: var(--solace-white);
+  cursor: pointer;
+  transition: all var(--solace-transition-fast);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--solace-primary);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--solace-space-1) var(--solace-space-3);
+  border-radius: var(--solace-radius-full);
+  font-size: var(--solace-font-size-xs);
+  font-weight: var(--solace-font-weight-medium);
+}
+
+.badge-primary {
+  background-color: rgb(37 99 235 / 0.1);
+  color: var(--solace-primary);
+}
+
+.badge-secondary {
+  background-color: rgb(16 185 129 / 0.1);
+  color: var(--solace-secondary);
+}
+
+.badge-gray {
+  background-color: var(--solace-gray-100);
+  color: var(--solace-gray-700);
+}
