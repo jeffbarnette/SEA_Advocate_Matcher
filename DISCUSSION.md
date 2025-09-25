@@ -18,3 +18,7 @@
 9. Created a new branch and PR to address the database integration issues. Added missing migrations, fixed seed data issues and verified database connection.
 
 10. Created a new branch and PR to address the React antipatterns found. Addressed inline styles and poor compoment structure. I have renamed the original files with a **-old.tsx** so they are there for historical purposes and comparison.
+
+11. Created a new branch and PR to address outstanding issues for local env linting and testing. Added tests. Added API documentation.
+
+12. Created a new branch and PR to enhance the UI and visual experience of the app. This was a bonus just because I felt the UI needed a little love. ❤️

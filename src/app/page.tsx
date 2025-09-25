@@ -3,11 +3,13 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { useAdvocates } from "../hooks/useAdvocates";
 import { Advocate } from "./types/advocate";
+import { SolaceLogo } from "./components/SolaceLogo";
 import { FilterControls } from "./components/FilterControls";
 import { AdvocatesTable } from "./components/AdvocatesTable";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import { ErrorMessage } from "./components/ErrorMessage";
 import { NoResults } from "./components/NoResults";
+import { Footer } from "./components/Footer";
 import styles from "./advocates.module.css";
 
 export default function Home() {
@@ -68,54 +70,90 @@ export default function Home() {
   // Show loading state
   if (loading.isLoading) {
     return (
-      <main className={styles.main}>
-        <h1>Solace Advocates</h1>
-        <LoadingSpinner />
-      </main>
+      <div className="min-h-screen bg-white">
+        {/* Simple header */}
+        <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-4">
+          <SolaceLogo size="md" variant="full" />
+        </header>
+        
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold text-gray-900 mb-8">Advocate Directory</h1>
+            <LoadingSpinner />
+          </div>
+        </main>
+        <Footer />
+      </div>
     );
   }
 
   // Show error state
   if (loading.error) {
     return (
-      <main className={styles.main}>
-        <h1>Solace Advocates</h1>
-        <ErrorMessage error={loading.error} onRetry={handleRetry} />
-      </main>
+      <div className="min-h-screen bg-white">
+        {/* Simple header */}
+        <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-4">
+          <SolaceLogo size="md" variant="full" />
+        </header>
+        
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold text-gray-900 mb-8">Advocate Directory</h1>
+            <ErrorMessage error={loading.error} onRetry={handleRetry} />
+          </div>
+        </main>
+        <Footer />
+      </div>
     );
   }
 
   return (
-    <main className={styles.main}>
-      <h1>Solace Advocates</h1>
+    <div className="min-h-screen bg-white">
+      {/* Simple header */}
+      <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-4">
+        <SolaceLogo size="md" variant="full" />
+      </header>
       
-      <form onSubmit={handleFormSubmit}>
-        <FilterControls
-          searchTerm={searchTerm}
-          cityFilter={cityFilter}
-          degreeFilter={degreeFilter}
-          uniqueCities={uniqueCities}
-          uniqueDegrees={uniqueDegrees}
-          onSearchChange={handleSearchChange}
-          onCityChange={handleCityChange}
-          onDegreeChange={handleDegreeChange}
-          onReset={handleReset}
-        />
-      </form>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        {/* Page header */}
+        <div className="mb-8">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-2">Advocate Directory</h1>
+          <p className="text-gray-600">Search and filter our network of healthcare advocates</p>
+        </div>
 
-      <div className={styles.resultsSummary}>
-        Showing {advocates.length} advocate{advocates.length !== 1 ? 's' : ''}
-        {searchTerm && ` matching "${searchTerm}"`}
-        {cityFilter && ` in ${cityFilter}`}
-        {degreeFilter && ` with ${degreeFilter}`}
-      </div>
+        {/* Search and filters */}
+        <form onSubmit={handleFormSubmit} className="mb-8">
+          <FilterControls
+            searchTerm={searchTerm}
+            cityFilter={cityFilter}
+            degreeFilter={degreeFilter}
+            uniqueCities={uniqueCities}
+            uniqueDegrees={uniqueDegrees}
+            onSearchChange={handleSearchChange}
+            onCityChange={handleCityChange}
+            onDegreeChange={handleDegreeChange}
+            onReset={handleReset}
+          />
+        </form>
 
-      {/* Results Table */}
-      <AdvocatesTable advocates={advocates} />
-      
-      {advocates.length === 0 && !loading.isLoading && (
-        <NoResults onReset={handleReset} />
-      )}
-    </main>
+        {/* Results summary */}
+        <div className="bg-gray-50 rounded-lg p-4 mb-8">
+          <p className="text-gray-700">
+            Showing <span className="font-semibold text-primary">{advocates.length}</span> advocate{advocates.length !== 1 ? 's' : ''}
+            {searchTerm && ` matching "${searchTerm}"`}
+            {cityFilter && ` in ${cityFilter}`}
+            {degreeFilter && ` with ${degreeFilter}`}
+          </p>
+        </div>
+
+        {/* Results */}
+        <AdvocatesTable advocates={advocates} />
+        
+        {advocates.length === 0 && !loading.isLoading && (
+          <NoResults onReset={handleReset} />
+        )}
+      </main>
+      <Footer />
+    </div>
   );
 }

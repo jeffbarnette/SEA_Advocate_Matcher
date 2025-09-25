@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../advocates.module.css';
 
 interface FilterControlsProps {
   searchTerm: string;
@@ -24,59 +23,60 @@ export const FilterControls = React.memo(({
   onDegreeChange,
   onReset,
 }: FilterControlsProps) => (
-  <div className={styles.filterContainer}>
-    <div className={styles.filterRow}>
-      <div className={styles.filterGroup}>
-        <label htmlFor="search" className={styles.filterLabel}>
-          Search:
+  <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-6">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+      <div className="lg:col-span-2">
+        <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
+          Search
         </label>
         <input
           id="search"
           type="text"
           value={searchTerm}
           onChange={onSearchChange}
-          placeholder="Search advocates..."
-          className={styles.filterInput}
+          placeholder="Search by name, specialty, or experience..."
+          className="input w-full"
         />
       </div>
 
-      <div className={styles.filterGroup}>
-        <label htmlFor="city" className={styles.filterLabel}>
-          City:
+      <div>
+        <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+          Location
         </label>
         <select
           id="city"
           value={cityFilter}
           onChange={onCityChange}
-          className={styles.filterSelect}
+          className="select w-full"
         >
-          <option value="">All Cities</option>
+          <option value="">All Locations</option>
           {uniqueCities.map(city => (
             <option key={city} value={city}>{city}</option>
           ))}
         </select>
       </div>
 
-      <div className={styles.filterGroup}>
-        <label htmlFor="degree" className={styles.filterLabel}>
-          Degree:
+      <div>
+        <label htmlFor="degree" className="block text-sm font-medium text-gray-700 mb-2">
+          Credentials
         </label>
         <select
           id="degree"
           value={degreeFilter}
           onChange={onDegreeChange}
-          className={styles.filterSelect}
+          className="select w-full"
         >
-          <option value="">All Degrees</option>
+          <option value="">All Credentials</option>
           {uniqueDegrees.map(degree => (
             <option key={degree} value={degree}>{degree}</option>
           ))}
         </select>
       </div>
 
-      <div className={styles.filterButtonContainer}>
-        <button onClick={onReset} className={styles.resetButton}>
-          Reset Filters
+      <div>
+        <div className="h-6 mb-2"></div>
+        <button onClick={onReset} className="btn btn-outline w-full lg:w-auto">
+          Clear Filters
         </button>
       </div>
     </div>
