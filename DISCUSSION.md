@@ -12,3 +12,9 @@
 6. Created a new branch and PR to address environment configuration. Setup a proper .env.example file.
 
 7. Created a new branch and PR to address the frontend performance issues. This required completely rewriting the page component to address all of the frontend performance issues. Also fixed searching.
+
+8. Created a new branch and PR to address the search functionality.
+
+9. Created a new branch and PR to address the database integration issues. Added missing migrations, fixed seed data issues and verified database connection.
+
+10. Created a new branch and PR to address the React antipatterns found. Addressed inline styles and poor compoment structure. I have renamed the original files with a **-old.tsx** so they are there for historical purposes and comparison.
