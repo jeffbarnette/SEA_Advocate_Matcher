@@ -3,8 +3,20 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { useAdvocates } from "../hooks/useAdvocates";
 
+interface Advocate {
+  id: number;
+  firstName: string;
+  lastName: string;
+  city: string;
+  degree: string;
+  specialties: string[];
+  yearsOfExperience: number;
+  phoneNumber: string;
+  createdAt: string;
+}
+
 // Memoized table row component
-const AdvocateRow = React.memo(({ advocate }: { advocate: any }) => (
+const AdvocateRow = React.memo(({ advocate }: { advocate: Advocate }) => (
   <tr>
     <td style={{ padding: "8px", borderBottom: "1px solid #ddd" }}>{advocate.firstName}</td>
     <td style={{ padding: "8px", borderBottom: "1px solid #ddd" }}>{advocate.lastName}</td>
