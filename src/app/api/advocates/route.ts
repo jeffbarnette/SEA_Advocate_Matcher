@@ -41,7 +41,11 @@ export async function GET(request: NextRequest) {
           advocate.firstName.toLowerCase().includes(sanitizedSearch) ||
           advocate.lastName.toLowerCase().includes(sanitizedSearch) ||
           advocate.city.toLowerCase().includes(sanitizedSearch) ||
-          advocate.degree.toLowerCase().includes(sanitizedSearch)
+          advocate.degree.toLowerCase().includes(sanitizedSearch) ||
+          advocate.specialties.some(specialty => 
+            specialty.toLowerCase().includes(sanitizedSearch)
+          ) ||
+          advocate.yearsOfExperience.toString().includes(sanitizedSearch)
         );
       }
     }
