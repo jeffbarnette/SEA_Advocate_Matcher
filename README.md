@@ -122,9 +122,9 @@ src/
 
 ## 📚 Documentation
 
-- **[Environment Setup](./ENVIRONMENT.md)** - Detailed environment configuration and troubleshooting
+- **[Environment Setup](./docs/ENVIRONMENT.md)** - Detailed environment configuration and troubleshooting
 - **[API Documentation](./docs/API.md)** - Complete API reference and endpoints
-- **[Deployment Guide](./DEPLOYMENT.md)** - Production deployment instructions and best practices
-- **[Contributing Guide](./CONTRIBUTING.md)** - Development guidelines and contribution process
-- **[Development Discussion](./DISCUSSION.md)** - Technical decisions and architecture notes
-- **[Project Backlog](./BACKLOG.md)** - Issues, improvements, and future enhancements
+- **[Deployment Guide](./docs/DEPLOYMENT.md)** - Production deployment instructions and best practices
+- **[Contributing Guide](./docs/CONTRIBUTING.md)** - Development guidelines and contribution process
+- **[Development Discussion](./docs/DISCUSSION.md)** - Technical decisions and architecture notes
+- **[Project Backlog](./docs/BACKLOG.md)** - Issues, improvements, and future enhancements

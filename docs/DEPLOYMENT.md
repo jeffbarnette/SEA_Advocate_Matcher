@@ -386,4 +386,4 @@ npm run setup-env
 
 ---
 
-For more detailed information, see the [README.md](./README.md) and [ENVIRONMENT.md](./ENVIRONMENT.md).
+For more detailed information, see the [README.md](../README.md) and [ENVIRONMENT.md](./ENVIRONMENT.md).

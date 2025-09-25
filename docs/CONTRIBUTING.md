@@ -8,7 +8,7 @@ Thank you for your interest in contributing to the Solace Advocate Directory! Th
 
 1. **Fork the repository** and clone your fork
 2. **Create a feature branch** from `main`
-3. **Set up the development environment** following the [README.md](./README.md)
+3. **Set up the development environment** following the [README.md](../README.md)
 4. **Make your changes** following our coding standards
 5. **Test your changes** thoroughly
 6. **Submit a pull request** with a clear description
