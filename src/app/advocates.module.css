@@ -1,0 +1,161 @@
+/* Main container */
+.main {
+  margin: 24px;
+}
+
+/* Loading spinner */
+.loadingContainer {
+  text-align: center;
+  padding: 20px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingText {
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Error message */
+.errorContainer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffe0e0;
+  border: 1px solid #ffb3b3;
+  border-radius: 8px;
+  color: #cc0000;
+}
+
+.errorTitle {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.retryButton {
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Filter controls */
+.filterContainer {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.filterRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filterInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+.filterSelect {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.filterButtonContainer {
+  display: flex;
+  align-items: end;
+}
+
+.resetButton {
+  padding: 8px 16px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Results summary */
+.resultsSummary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Table styles */
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.tableHead {
+  background-color: #f8f9fa;
+}
+
+.tableHeader {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tableCell {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.specialtyItem {
+  margin-bottom: 2px;
+}
+
+/* No results */
+.noResultsContainer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.noResultsButton {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
