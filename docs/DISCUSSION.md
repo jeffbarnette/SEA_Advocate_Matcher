@@ -22,3 +22,5 @@
 11. Created a new branch and PR to address outstanding issues for local env linting and testing. Added tests. Added API documentation.
 
 12. Created a new branch and PR to enhance the UI and visual experience of the app. This was a bonus just because I felt the UI needed a little love. ❤️
+
+13. Updated README.md and added screenshots of the new UI and added additional missing documentation for the project to finish it off. Added sample documenation with disclaimer since its only representative of what the actual documenation might look like.
